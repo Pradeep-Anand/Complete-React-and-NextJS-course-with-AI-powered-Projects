@@ -32,7 +32,7 @@ export default function Navigation() {
       <ul className="flex justify-center text-white gap-4 my-4">
         {sections.map((section) => (
           <li key={section.id}>
-            <button className="rounded-md bg-blue-500 p-1 hover:bg-blue-500/90" href={`#${section.id}`}>
+            <button className="font-medium rounded-md bg-blue-500 px-3 py-2 hover:bg-blue-500/90" href={`#${section.id}`}>
               {section.icon} {section.label}
             </button>
           </li>

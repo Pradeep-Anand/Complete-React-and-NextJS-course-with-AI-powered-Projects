@@ -4,7 +4,7 @@ import Button from "./Button.jsx";
 export default function BasicProps() {
     const [clickCount, setClickCount] = useState(0);
   return (
-    <div className="bg-white rounded-md p-6 mx-4">
+    <div className="bg-white rounded-md p-6 mx-4 mb-4">
       <h1 className="text-[#252934] font-bold text-3xl">Basic Props</h1>
       <p className="mt-2 text-[#606068] font-medium">Props are arguments passed to React components. They allow us to pass data from parent to child components.</p>
       <h3 className="mt-4 mb-3 font-bold text-[#404550] text-lg">Different Colors</h3>

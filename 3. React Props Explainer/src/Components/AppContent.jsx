@@ -12,9 +12,9 @@ export default function AppContent() {
     <Header></Header>
     <Navigation></Navigation>
     <BasicProps />
-    <RefProps />
     <ChildrenProps />
     <ComplexProps />
+    <RefProps />
     <ThemeToggler />
     <Footer></Footer>
     </>

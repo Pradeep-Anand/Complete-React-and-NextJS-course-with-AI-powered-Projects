@@ -1,6 +1,6 @@
 function UserProfileCard({user, theme, actions}){
   return(
-    <div className={`w-full flex flex-row justify-between mr-4 border rounded-md p-4 mb-4 ${theme.backgroundColor}`}>
+    <div className={`w-full flex flex-row justify-between mr-4 rounded-md p-4 mb-4 ${theme.backgroundColor}`}>
       <div className="flex flex-row justify-between gap-4">
         <div className={`w-16 h-16 flex items-center justify-center rounded-full text-2xl ${theme.avatarBg}`}>
           {user.avatar}
@@ -69,12 +69,12 @@ export default function ComplexProps() {
       actions: {
         primary: {
           label: "View Profile",
-          onClick: () => alert("Viewing profile of Alice Johnson"),
+          onClick: () => alert("Viewing profile of Pradeep Anand"),
           className: "bg-purple-500 text-white hover:bg-purple-600 transition",
         },
         secondary: {
           label: "Message",
-          onClick: () => alert("Messaging Alice Johnson"),
+          onClick: () => alert("Messaging Pradeep Anand"),
           className: "bg-gray-200 text-black hover:bg-gray-600 transition",
         }
       }
@@ -113,10 +113,10 @@ export default function ComplexProps() {
     }
   ]
   return (
-    <div className="bg-white rounded-md p-6 mx-4 mt-4">
+    <div className="bg-white rounded-md p-6 mx-4 mt-4 mb-4">
       <h1 className="text-[#252934] font-bold text-3xl">Complex/Nested Props</h1>
       <p className="mt-2 text-[#606068] font-medium">Complex props allow you to pass nested objects and functions, enabling sophisticated component configurations and interactions.</p>
-      <h3 className="mt-4 mb-3 font-bold text-[#404550] text-lg">User Profile Card</h3>
+      <h3 className="mt-4 mb-3 font-bold text-[#404550] text-lg">User Profile Card (Nested Users, Theme & Actions)</h3>
       <div className="flex flex-row justify-between rounded">
         {
         users.map((userData, index) => (

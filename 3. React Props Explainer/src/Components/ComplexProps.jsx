@@ -1,7 +1,7 @@
 function UserProfileCard({user, theme, actions}){
   return(
-    <div className={`w-full flex flex-row justify-between mr-4 rounded-md p-4 mb-4 ${theme.backgroundColor}`}>
-      <div className="flex flex-row justify-between gap-4">
+    <div className={`w-full flex flex-col md:flex-row justify-between md:mr-4 rounded-md p-4 mb-4 ${theme.backgroundColor}`}>
+      <div className="flex flex-col md:flex-row justify-between gap-4 w-full">
         <div className={`w-16 h-16 flex items-center justify-center rounded-full text-2xl ${theme.avatarBg}`}>
           {user.avatar}
         </div>
@@ -22,19 +22,19 @@ function UserProfileCard({user, theme, actions}){
           </div>
           <hr className="border-gray-300 mt-4" />
           <div className={`mt-2 ${theme.textColor}`}>
-            {user.stats && <div className="flex flex-row"> {
-              Object.entries(user.stats).map(([key, value]) => (
-              <div className="flex flex-col  mr-24 font-medium" key={key} >
-                <strong className="font-medium">{value}</strong> {key}
-              </div>
-            ))}
-          </div> }
+            {user.stats && <div className="flex flex-wrap gap-3">
+              {Object.entries(user.stats).map(([key, value]) => (
+                <div className="flex flex-col mr-24 font-medium" key={key}>
+                  <strong className="font-medium">{value}</strong> {key}
+                </div>
+              ))}
+            </div>}
           </div>
-          <div className="flex gap-2 mt-4">
-            <button className={`w-full px-4 py-2 rounded font-medium ${actions.primary.className}`} onClick={actions.primary.onClick}>
+          <div className="flex flex-col md:flex-row gap-2 mt-4 w-full">
+            <button className={`w-full md:w-full px-4 py-2 rounded font-medium ${actions.primary.className}`} onClick={actions.primary.onClick}>
               {actions.primary.label}
             </button>
-            <button className={`w-full px-4 py-2 rounded font-medium ${actions.secondary.className}`} onClick={actions.secondary.onClick}>
+            <button className={`w-full md:w-full px-4 py-2 rounded font-medium ${actions.secondary.className}`} onClick={actions.secondary.onClick}>
               {actions.secondary.label}
             </button>
           </div>
@@ -117,10 +117,10 @@ export default function ComplexProps() {
       <h1 className="text-[#252934] font-bold text-3xl">Complex/Nested Props</h1>
       <p className="mt-2 text-[#606068] font-medium">Complex props allow you to pass nested objects and functions, enabling sophisticated component configurations and interactions.</p>
       <h3 className="mt-4 mb-3 font-bold text-[#404550] text-lg">User Profile Card (Nested Users, Theme & Actions)</h3>
-      <div className="flex flex-row justify-between rounded">
+      <div className="flex flex-col md:flex-row md:justify-between gap-4 rounded">
         {
         users.map((userData, index) => (
-          <UserProfileCard key = {index} {...userData}/>
+          <UserProfileCard key={index} {...userData}/>
         ))
         }
       </div>

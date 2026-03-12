@@ -2,14 +2,15 @@ import {useRef, forwardRef} from 'react'
 const CustomInput = forwardRef(({label, placeholder}, ref) => {
   return (
     <>
-        <label htmlFor="firstInput" className="block text-medium font-medium text-gray-700 mb-2">
+        <label for={label} className="block text-medium font-medium text-gray-700 mb-2">
           {label}
         </label>
         <input
         ref={ref}
           type="text"
+          id={label}
           placeholder={placeholder}
-          className="mt-1 block w-full border h-10 p-2 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 mb-4 text-medium"
+          className="mt-1 block w-full border h-10 p-2 border-gray-400 rounded-md focus:ring-indigo-500 focus:border-indigo-500 mb-4 text-medium"
         />
       </>
   )
@@ -18,7 +19,7 @@ const CustomInput = forwardRef(({label, placeholder}, ref) => {
 CustomInput.displayName = 'CustomInput';
 
 export default function RefProps() {
-  const firstInputRef = useRef(null);
+  const firstInputRef = useRef("Pradeep");
   const secondInputRef = useRef(null);
 
 

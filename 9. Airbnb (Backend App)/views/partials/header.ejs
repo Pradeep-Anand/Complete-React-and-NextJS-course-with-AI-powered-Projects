@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/output.css">
+</head>
+<body>
+  <header>
+    <div class="flex flex-row justify-around items-center bg-[#FFFDEB] p-4">
+      <img src="/airbnb.svg" alt="Airbnb Icon"
+      class="h-9"/>
+      <p class="text-[#ff385c] text-2xl font-semibold font-['Outfit sans-serif']">airbnb</p>
+      <ul class="flex flex-row gap-10">
+        <li>
+          <a href="/user" class="text-[#ff385c] font-['Outfit sans-serif'] hover:bg-red-100 font-semibold <%= tab === 'Home' ? 'border-b-2 border-[#ff385c]' : '' %>">Home</a>
+        </li>
+        <li>
+          <a href="/host/register-home" class="hover:bg-red-100 text-[#ff385c] font-['Outfit sans-serif'] font-semibold <%= tab === 'addHome' ? 'border-b-2 border-[#ff385c]' : '' %>">Register Home</a>
+        </li>
+      </ul>
+    </div>
+  </header>

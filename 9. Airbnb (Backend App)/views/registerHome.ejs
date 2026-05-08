@@ -1,0 +1,51 @@
+  <%- include('partials/header') %>
+  <main class="flex justify-center"  >
+    <div class="flex  flex-col items-center">
+    <h1 class="text-amber-400 font-semibold text-xl font-['Outfit sans-serif'] mt-10">Register your home on airbnb</h1>
+    <div class="p-5 bg-[#FFFDEB] border-red-500 rounded h-fit flex flex-row items-center justify-center w-fit mt-5">
+      
+    <form action="/host/register-home" method="post"
+    class="flex flex-col " id="registerForm">
+      <input type="text" placeholder="House Name" name="houseName"
+      class=" rounded p-2 m-2 border-amber-300 border-2" required>
+      <input type="number" name="price" placeholder="Price Per Night"
+      class=" rounded p-2 m-2 border-amber-300 border-2" required>
+      <input type="text" name="location" placeholder="Location"
+      class=" rounded p-2 m-2 border-amber-300 border-2" required>
+      <input type="number" name="rating" min="0" max="5" placeholder="Rating"
+      class=" rounded p-2 m-2 border-amber-300 border-2" required>
+      <label class="ml-2 text-sm text-[#ff385c]">Choose a house image</label>
+      <input type="file" id="homeImage" accept="image/*"
+      class=" rounded p-2 m-2 border-amber-300 border-2" required>
+      <input type="hidden" name="homeImg" id="homeImg">
+      <button type="submit"
+      class="text-[#FFFDEB] font-['Outfit sans-serif'] p-2 m-2 bg-[#fb345c] rounded">Register Home</button>
+    </form>
+  </div>
+  </div>
+  </main>
+  <script>
+    const fileInput = document.getElementById('homeImage');
+    const hiddenInput = document.getElementById('homeImg');
+
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) {
+        hiddenInput.value = '';
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => {
+        hiddenInput.value = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
+  </div>
+  </div>
+  </main>
+  
+</body>
+</html>
